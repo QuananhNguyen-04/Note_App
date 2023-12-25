@@ -1,0 +1,24 @@
+{
+  "name": "note_app",
+  "version": "1.0.0",
+  "description": "\"Similar Sticky Notes App\"",
+  "main": "base.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/QuananhNguyen-04/Note_App.git"
+  },
+  "author": "QuananhNguyen-04",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/QuananhNguyen-04/Note_App/issues"
+  },
+  "homepage": "https://github.com/QuananhNguyen-04/Note_App#readme",
+  "devDependencies": {
+    "debug": "^4.3.4",
+    "electron": "^28.1.0"
+  }
+}

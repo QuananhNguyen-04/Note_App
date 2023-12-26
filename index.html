@@ -7,8 +7,18 @@
 	<title>Simple Note</title>
 </head>
 <body>
-	<h1>Hello Worlds!</h1> 
+	<h1>Hello! Welcome to Simple Notes</h1> 
 	<h3>This app is made by QuananhNguyen-04 and friends</h3>
-	<p>Địt mẹ nó</p>
+	
+	<p id="info"></p>
+	<div>
+		<input type="text" placeholder="Title" id="noteTitle" value="A">
+		<textarea name="newNote" id="noteData" cols="40" rows="10" placeholder="Type your notes"></textarea>
+	</div>
+	<div>
+	<p id="notice"></p>
+	<button type="button" id="saveBtn" class="saveBtn">Save Notes</button>
+	</div>
 </body>
+<script src="renderer.js"></script>
 </html>

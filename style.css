@@ -1,0 +1,14 @@
+* {
+	box-sizing: border-box;
+	margin: none;
+	padding: 0;
+}
+#nodeTitle, #newNote {
+	resize: none;
+	font-size: large;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+#notice {
+	visibility:hidden;
+}

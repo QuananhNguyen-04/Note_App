@@ -1,10 +1,16 @@
-window.addEventListener('DOMContentLoaded', () => {
-	const replaceText = (selector, text) => {
-		const element = document.getElementById(selector)
-		if (element) element.innerText = text
-	}
+const { contextBridge, ipcRenderer } = require('electron')
 
-	for (const dependency of ['chrome', 'node', 'electron']) {
-		replaceText(`${dependency}-version`, process.versions[dependency])
+contextBridge.exposeInMainWorld('versions', {
+	node: () => process.versions.node,
+	chrome: () => process.versions.chrome,
+	electron: () => process.versions.electron,
+	// we can also expose variables, not just functions
+})
+
+contextBridge.exposeInMainWorld('dataFeature', {
+	createFile: (title, data) => {
+		console.log("in preload.js")
+		console.log(title, data);
+		return ipcRenderer.invoke('saveFile', {title, data})
 	}
 })

@@ -9,8 +9,14 @@ contextBridge.exposeInMainWorld('versions', {
 
 contextBridge.exposeInMainWorld('dataFeature', {
 	createFile: (title, data) => {
-		console.log("in preload.js")
-		console.log(title, data);
-		return ipcRenderer.invoke('saveFile', {title, data})
+		// console.log("in preload.js")
+		// console.log(title, data);
+		return ipcRenderer.invoke('saveFile', { title, data })
 	}
-})
+});
+
+// contextBridge.exposeInMainWorld('openPage', {
+// 	open: () => {
+// 		return ipcRenderer.invoke('openPage');
+// 	}
+// });

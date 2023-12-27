@@ -4,7 +4,8 @@
   "description": "\"Similar Sticky Notes App\"",
   "main": "base.js",
   "scripts": {
-    "start": "electron --trace-warnings --enable-logging .",
+    "start": "electron --trace-warnings .",
+	
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

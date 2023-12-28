@@ -7,9 +7,7 @@ const directWrite = document.getElementById('writing')
 
 function openWritingPage() {
 	console.log("go to writing page");
-	window.location.assign('./writing_features/index.html');
-	// history.pushState({}, '', './writing_features/index.html');
-	// openPage.open("./writing_features/index.html")
+	openPage.openWriting();
 }
 
 

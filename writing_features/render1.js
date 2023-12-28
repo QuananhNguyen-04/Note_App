@@ -12,7 +12,9 @@ homeBtn.addEventListener("click", backHomePage)
 function backHomePage() {
 	console.log("Returning")
 	// window.location.assign("../mainPage.html")
-	openPage.open();
+	// openPage.open();
+	// app.quit();
+	closePage.closeWrite();
 }
 
 btn.addEventListener("click", saveNote);

@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, screen } = require('electron');
 const { ipcMain } = require('electron/main');
 const { writeFile, writeFileSync, existsSync, mkdirSync } = require('node:fs');
 
@@ -43,39 +43,38 @@ function openWritingChild(event) {
 	// if (!dir) {
 	// 	return;
 	// }
-	console.log("in basejs");
+	let bounds = screen.getPrimaryDisplay().bounds;
+	let x = bounds.x + ((bounds.width - 600) / 2);
+	let y = bounds.y + ((bounds.height - 500) / 2);
+
 	winChild = new BrowserWindow({
 		parent: mainWin,
 		width: isDev ? 600 : 400,
 		height: 500,
-		x: center? center[0] - (isDev? 100: 100): null,
-		y: center? center[1] - 200: null,
+		// x: center? center[0] - (isDev? 100: 100): null,
+		// y: center? center[1] + 50: null,
+		
+		x: x,
+		y: y,
 		webPreferences: {
 			preload: path.join(__dirname, 'preload.js'),
 			nodeIntegration: false,
 			nodeIntegrationInWorker: true,
 			contextIsolation: isDev ? true : false,
-		}
+		},
+		center: true,
 	});
 	// ipcMain.handle()
-	event = event || window.event;
-	event.preventDefault();
+	// event = event || window.event;
+	// event.preventDefault();
 	mainWin.setAlwaysOnTop(true, 'screen-saver');
 	mainWin.hide();
+	// winChild.center();
 	winChild.loadFile("./writing_features/index.html");
 	winChild.show();
 	winChild.on("closed", () => {
 		mainWin.show();
-		console.log(mainWin.show)
 	})
-	// winChild.on("closed", () => {
-	// 	if (mainWin.on("hide", _) 
-	// 	&& BrowserWindow.getAllWindows().length() === 1 
-	// 	&& process.platform !== 'darwin') 
-
-	// 		app.quit();
-	// })
-	// window.location.assign('./writing_features/index.html')
 }
 
 

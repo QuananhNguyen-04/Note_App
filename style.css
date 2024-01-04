@@ -1,7 +1,55 @@
 * {
 	box-sizing: border-box;
 	padding: 0;
-	margin: 0;
+	margin: auto;
+	position: relative;
 	/* font-size: ; */
+	font-family: 'Calibri', sans-serif;
 }
 
+header {
+	height: 50%;
+	align-items: center;
+	background: radial-gradient(rgb(131, 100, 64), rgb(83, 162, 188), rgb(0, 0, 0));
+	color: rgb(255, 255, 255);
+	padding: 1rem;
+}
+
+#welcomeTag {
+	font-size: 2.5rem;
+}
+
+#details {
+	font-style: italic;
+}
+
+body {
+	align-items: center;
+	text-align: center;
+	height: 100vh;
+	background: linear-gradient(30deg, rgb(96, 88, 159), rgb(88, 173, 159));
+	overflow: hidden;
+}
+
+.functions {
+	padding: 1rem;
+	font-style: bold;
+}
+
+button {
+	color: white;
+	background-color: rgb(126, 8, 126);
+}
+
+#writing,
+#drawing {
+	margin: 1rem;
+	padding: 1rem;
+	border: 3px none;
+	border-radius: 200%;
+}
+
+button:hover {
+	color: rgb(204, 140, 140);
+	cursor: pointer;
+}

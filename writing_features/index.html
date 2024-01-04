@@ -6,25 +6,51 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="Content-Security-Policy" content="script-src 'self'">
 	<link rel="stylesheet" href="style1.css">
+	<!-- <link rel="stylesheet" href="fontawesome-free-5.15.4-web/css/all.css"> -->
 	<title>Simple Note</title>
 </head>
 
 <body>
-	<h1>Simple Notes</h1>
-	<h3>Writing Page</h3>
-	<button type="button" id="homePage">Back To Home Page</button>
-	<p id="info"></p>
-	<div>
-		<input type="text" placeholder="Title" id="noteTitle" value="A">
-		<textarea name="newNote" id="noteData" cols="40" rows="10" placeholder="Type your notes"></textarea>
-	</div>
-	<div>
+	<header>
+		<div>
+			<h1>WRITING PAGES</h1>
+		</div>
+
+	</header>
+	<aside class="sidenav" id="sidenav">
+		<div class="wrapper_dropdown" id="wrapper_dropdown">
+			<ul class="color_dropdown" id="color_dropdown">
+				<li class="color" id="red"></li>
+				<li class="color" id="yellow"></li>
+				<li class="color" id="black" selected="selected"></li>
+				<li class="color" id="white"></li>
+			</ul>
+		</div>
+		<div class="wrapper-text-btn">
+			<img src="../assests/bold.png" alt="Bold" class="text-btn">
+			<img src="../assests/italic.png" alt="Bold" class="text-btn">
+			<img src="../assests/underline.png" alt="Bold" class="text-btn">
+		</div>
+		<div class="wrapper_linking">
+			<div id="linking">
+				<!-- <img src="../assests/diskette.png" alt="Save" id="saveBtn"> -->
+				<div class="img-wapper"><img src="../assests/saveIcon.png" alt="Save" id="saveBtn"></div>
+				<div class="img-wapper"><img src="../assests/home.png" alt="Home" id="imgHome"></div>
+
+				<!-- <button type="button" id="homePage">Back To Home Page</button> -->
+			</div>
+		</div>
+	</aside>
+	<div class="mainContent" id="mainContent">
+		<div class="typing">
+			<!-- <input type="text" placeholder="Note Title" id="noteTitle" value=""> -->
+			<div contenteditable="true" data-placeholder="Note Title" id = "noteTitle"></div>
+			<!-- <textarea name="newNote" id="noteData" cols="40" rows="6" placeholder="Type your notes"></textarea> -->
+			<div contenteditable="true" data-placeholder="Typing your notes" id="noteData"></div>
+		</div>
 		<p id="notice">Saving Log</p>
-		<button type="button" id="saveBtn">Save Notes</button>
 	</div>
-	<div>
-		<p id="debug">Debug block</p>
-	</div>
+
 </body>
 <script src="render1.js"></script>
 

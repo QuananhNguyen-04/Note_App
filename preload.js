@@ -11,7 +11,7 @@ contextBridge.exposeInMainWorld(
 	'dataFeature', {
 		createFile: (title, data) => {
 			// console.log("in preload.js")
-			// console.log(title, data);
+			console.log(title, data);
 			return ipcRenderer.invoke('saveFile', { title, data })
 		}
 });
